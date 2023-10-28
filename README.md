@@ -1,6 +1,6 @@
-# Technical Documentation Sample
-Status: Ongoing
+# FreeCodeCamp - Responsive Web Design
+* Certification Project 3 - Technical Documentation Page
+* Objective: Build an app that is functionally similar to https://technical-documentation-page.freecodecamp.rocks
 
-# What I learned
-* Intermediate CSS
-* Responsive Web Design
+# What I Learned
+* 
