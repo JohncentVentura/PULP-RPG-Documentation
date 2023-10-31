@@ -4,6 +4,6 @@
 
 # What I Learned
 * Using Semantic Elements in HTML
-* Positions and Pseudo Selectors in CSS
+* Positions, Variables & Pseudo Selectors in CSS
 * Responsive Website using @media in CSS
 * Responsive Navigation Bar using CSS and a little bit of JavaScript
