@@ -1,10 +1,10 @@
 :root {
-    --color-black: #000000;
-    --color-white: #FFFFFF;
-    --color-primary: white;
-    --color-secondary: teal;
+    --color-black: #000;
+    --color-gray: gray;
+    --color-white: #fff;
+    --color-theme-color: teal;
     --nav-width: 19rem;
-    --margin-visual-aid: 1.8rem;
+    --margin-visual-aid: 2rem;
     --indent-1: 6%;
     --indent-2: 12%;
 }
@@ -18,7 +18,7 @@
 }
 
 body {
-    background-color: var(--color-primary);
+    background-color: var(--color-white);
     color: var(--color-black);
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.1rem;
@@ -28,15 +28,22 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    border-right: 3px solid grey;
+    border-right: 3px solid var( --color-gray);
     padding: 1rem 0 0 0;
     width: var(--nav-width);
-    height: 100vh; 
+    height: 100vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-#navbar ul li a {
-    border-top: 1px solid black;
+.nav-links li {
+    list-style: none;
+}
+
+.nav-link {
+    border-top: 1px solid var( --color-gray);
     padding: 0.8rem 2rem;
     width: 100%;
     height: 100%;
@@ -44,66 +51,128 @@ body {
     color: var(--color-black);
 }
 
-.main-section {
-    margin: 0 0 0 var(--nav-width);
-    padding: 2rem 3rem;
+.nav-link:hover {
+    background-color: var(--color-gray);
+    color: var(--color-white);
 }
 
-header{
-    margin: 0 0 1rem 0;
+.toggle-button {
+    position: absolute;
+    top: 0.6rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-button .bar {
+    border-radius: 10px;
+    height: 4px;
+    width: 80%;
+    background-color: black;
+}
+
+.main-section {
+    position: relative;
+    margin: 0 0 0 var(--nav-width);
+    padding: 2rem 5.5rem;
+}
+
+.end-section {
+    margin-top: 4.5rem;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+#Title header{
+    margin: 0; /*By freeCodeCamp:  The first child of each .main-section should be a header element.*/
+}
+
+#Title .sub-section {
+    margin: 0 0 0 0;
+    padding: 0 30%;
+    height: 90vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#Title .sub-section p {
+    margin: 0;
+    line-height: 1.5rem;
+    text-indent: 0;
+    text-align: center;
+    text-justify: auto;
+}
+
+header {
+    margin: 0 0 1.5rem 0;
     display: block;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
 }
 
-p, h3, ol li, img, figcaption{
-    margin: 0 0 0.8rem 0;
+p,
+h3,
+ol li,
+img,
+figcaption {
+    margin: 0 0 1rem 0;
 }
 
-.sub-section{
-    margin: 2.4rem 0 0 0;
+.sub-section {
+    margin: 2.5rem 0 0 0;
 }
 
-p{
+p {
     line-height: 1.5rem;
     text-indent: var(--indent-1);
     text-align: justify;
     text-justify: inter-word;
 }
 
-ol[type="1"]{
+ol[type="1"] {
     margin: 0 0 0 var(--indent-1);
     display: block;
     text-align: justify;
     text-justify: inter-word;
 }
 
-ol[type="a"]{
+ol[type="a"] {
     margin: 0 0 0 var(--indent-2);
 }
 
-.table-section{
+.table-section {
     margin: var(--margin-visual-aid) 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-table, tr, th, td {
+table,
+tr,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-table{
+table {
     width: 80%;
 }
 
-th, td{
+th,
+td {
     padding: 0.5rem 0.5rem;
 }
 
-figure{
+figure {
     margin: var(--margin-visual-aid) 0;
     display: flex;
     flex-direction: column;
@@ -111,19 +180,15 @@ figure{
     align-items: center;
 }
 
-img{
-    border: 2px solid var(--color-secondary);
-    width: 70%;
-    height: 70%;
+img {
+    border: 2px solid var(--color-gray);
+    width: 75%;
+    height: 75%;
     object-fit: cover;
 }
 
-#references header{
-    margin: 0 0 1.5rem 0;
-}
-
-#references p{
-    margin: 0 0 1.3rem 0;
+#references p {
+    margin: 0 0 1.25rem 0;
     line-height: 1.5rem;
     text-indent: 0;
     text-align: justify;
@@ -131,100 +196,100 @@ img{
 }
 
 /* @media */
+@media screen and (max-width: 1115px){
+    .main-section {
+        padding: 2rem 3.5rem 0;
+    }
+
+    img{
+        width: 85%;
+        height: 85%;
+    }
+}
+
 @media screen and (max-width: 815px) {
     #navbar {
-        position: absolute;
-        top: 0rem;
+        position: fixed;
+        top: 0;
         left: 0;
-        border: 3px solid grey;
-        width: 98vw;
-        height: 12rem;
-        overflow-y: auto;
+        z-index: 1;
+        border-bottom: 3px solid grey;
+        padding: 1rem 0 0;
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--color-white);
     }
 
-    
-
-    #main-doc{
-        margin: 20rem 0 0 0;
+    #navbar header {
+        margin: 0 0 1rem 1rem;
     }
 
-    .main-section{
+    .nav-links {
+        width: 100%;
+        text-align: center;
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.4rem 1rem;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    /* Sections */
+    .main-section {
+        position: relative;
         margin: 0;
+        padding: 5rem 2.5rem 0;
+    }
+
+    .end-section {
+        margin-top: 5.5rem;
+        border-bottom: 1px solid var(--color-gray);
+    }
+
+    #Title .sub-section {
+        padding: 0 15%;
+    }
+
+    header {
+        
+        font-size: 1.2rem;
+    }
+
+    p,
+    h3,
+    ol li,
+    img,
+    figcaption,
+    code {
+        font-size: 1rem;
+    }
+
+    p {
+        line-height: 1.3rem;
+    }
+
+    th,
+    td {
+        padding: 0.3rem 0.3rem;
+        font-size: 1rem;
+    }
+
+    img {
+        border: 2px solid var(--color-gray);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
-
-/*
-body{
-    color: #4d4e53;
-    font-family: 'Open Sans', Arial, sans-serif;
-    margin-top: 9px;
-    line-height: 1.5;
-}
-
-#navbar{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    border-right: 3px solid grey;
-    width: 300px;
-    height: 100%;
-}
-
-#navbar header{
-    margin-top: 10px;
-    margin-left: 32px;
-}
-
-#navbar ul{
-    margin-top: 16px;
-    padding: 0%;
-}
-
-#navbar li{
-    border-top: 1px solid grey;
-    width: 100%;
-    height: auto;
-    list-style: none;
-}
-
-#navbar a{
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-#main-doc{
-    position: absolute;
-    margin-left: 310px;
-    margin-bottom: auto;
-    padding: 20px;
-}
-
-header{
-    text-align: left;
-    color: black;
-    font-size: 1.8em;
-    font-weight: 700px;
-}
-
-section{
-    display: block;
-}
-
-section article{
-    font-size: 0.96em;
-    margin-top: 18px;
-    margin-right: 16px;
-    margin-left: 16px;
-}
-
-p{
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-*/
