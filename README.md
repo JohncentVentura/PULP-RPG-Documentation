@@ -3,4 +3,5 @@ Project of University of Luzon Pozorrubio Role Playing Game or “PULP RPG” is
 
 The project takes the design of a merged platformer game and a role-playing game incorporated with learning materials and referencing real life environments where the campus is located. The purpose of this study was to determine the effectiveness of using a video game as a promotional tool and also a learning platform to depict to the students the wonders of learning through playing video games. The project can also become a portfolio for the proponents as a future reference for job applications, as well as it can also be an introduction for teaching students about game development, here is a quick preview of the project...
 
-# Website version of the capstone project manuscript
+# Notes
+This is the website version of the capstone project manuscript PULP RPG
